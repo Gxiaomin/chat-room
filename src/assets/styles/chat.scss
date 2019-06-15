@@ -1,0 +1,152 @@
+// 聊天窗口
+.chat-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 80%;
+  height: 530px;
+  border: solid 1px #ddd;
+  border-radius: $border-radius-base;
+  background-color: #fff;
+  // 窗口头部
+  .chat-header {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #e8e8e861;
+    // 用户头像、用户名
+    .user {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      min-width: 50px;
+      height: 50px;
+      padding-left: 30px;
+      .user-logo {
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+        border-radius: 50%; 
+      }
+      .user-name {
+        display: inline-block;
+        line-height: 24px;
+        font-size: 12px;
+        overflow: hidden;
+      }
+    }
+    // 关闭按钮
+    .close {
+      position: absolute;
+      top: 6px;
+      right: 15px;
+      img {
+        width: 14px;
+        height: 14px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  // 窗口主体
+  .chat-main {
+    flex: 1;
+    box-sizing: border-box;
+    overflow: hidden;
+    .msg-list {
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      // 消息主体
+      .msg-item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        min-height: 70px;
+        // 用户头像
+        .user-img {
+          width: 30px;
+          height: 100%;
+          margin: 0 10px;
+          img {
+            width: 30px;
+            height: 30px;
+          }
+        }
+        // 内容主体
+        .content-box {
+          flex: 1;
+          padding: 10px 0;
+          // 发送时间
+          .send-time {
+            line-height: 16px;
+            color: #666;
+          }
+          // 内容
+          .content {
+            width: auto;
+            max-width: 75%;
+            padding: 10px;
+            font-size: 12px;
+            border-radius: 8px;
+            // 消息中的url
+            .msg-content {
+              a {
+                color: #305dec;
+              }
+            }
+          }
+        }
+      }
+      // 对方消息队列
+      .other {
+        .content-box {
+          display: flex;
+          .content {
+            background: #e8e8e89c;
+          }
+        }
+      }
+      // 自己消息队列
+      .self {
+        flex-direction: row-reverse;
+        .content-box {
+          display: flex;
+          justify-content: flex-end;
+          .content {
+            background: #64d5f55c;
+          }
+        }
+      }
+    }
+  }
+
+  // 发送消息面板
+  .chat-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    box-shadow: 0 -1px 0 0 rgba(0, 0, 0, .08);
+    // 输入区域
+    .input-textarea {
+      flex: 1;
+      height: 100%;
+      padding: 10px;
+      overflow-y: auto;
+      border: none;
+      box-sizing: border-box;
+    }
+    // 发送按钮
+    .send {
+      width: 50px;
+      height: 100%;
+      background: #f6f6f6;
+      color: #333;
+    }
+  }
+}

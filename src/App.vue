@@ -1,28 +1,46 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      <div class="panel">
+        <header>
+          <button @click="onChat">开始聊天</button>
+        </header>
+        <div class="main">
+          <chat-container ref="chatRoom"></chat-container>
+        </div>
+      </div>
+      <div class="panel">
+        <header>
+          <button @click="onOtherChat">模拟B</button>
+        </header>
+        <div class="main">
+          <other-container ref="otherRoom"></other-container>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ChatContainer from './chat/ChatContainer.vue'
+import OtherContainer from './chat/OtherContainer.vue'
 
 export default {
   name: 'app',
+
   components: {
-    HelloWorld
+    ChatContainer,
+    OtherContainer
+  },
+
+  methods: {
+    onChat () {
+      this.$refs.chatRoom.show()
+    },
+
+    onOtherChat () {
+      this.$refs.otherRoom.show()
+    }
   }
 }
 </script>
-
-<style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

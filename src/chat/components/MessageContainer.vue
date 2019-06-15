@@ -19,7 +19,6 @@
 
 <script>
 import { mapState } from 'vuex'
-import { isIndexofURL } from '../../utils/tools'
 
 export default {
   updated () {

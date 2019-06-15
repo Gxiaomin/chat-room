@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MessageContainer from './MessageContainer.vue';
+import MessageContainer from './MessageContainer.vue'
 
 export default {
   components: {
@@ -14,4 +14,3 @@ export default {
   }
 }
 </script>
-

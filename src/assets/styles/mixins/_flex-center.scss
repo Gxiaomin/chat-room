@@ -1,0 +1,13 @@
+// flex
+@mixin flex-center ($direction: row, $justify: flex-start, $items: flex-start) {
+  display: flex;
+  justify-content: $justify;
+
+  @if $direction and $direction != row {
+    flex-direction: $direction;
+  }
+
+  @if $items and $items != flex-start {
+    align-items: $items;
+  }
+}

@@ -1,6 +1,6 @@
 <template>
   <div class="chat-footer">
-    <textarea class="input-textarea" v-model.lazy="inputVal"></textarea>
+    <textarea class="input-textarea" v-model="inputVal"></textarea>
     <button class="send" @click="onSend">发送</button>
   </div>
 </template>

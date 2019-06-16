@@ -1,7 +1,7 @@
 <template>
   <!-- 模拟对方发送消息窗口 -->
   <div class="other-form" v-if="isOther">
-    <textarea class="other-textarea" v-model.lazy="inputVal"></textarea>
+    <textarea class="other-textarea" v-model="inputVal"></textarea>
     <div class="footer">
       <button class="cancel" @click="isOther = false; inputVal = ''">取消</button>
       <button @click="onSend">发送</button>

@@ -1,6 +1,8 @@
-@import './_variable.scss';
+@import './mixins/mixins.scss';
+@import './variable.scss';
 @import './reset.scss';
 
+@import './common.scss';
 @import './base.scss';
 @import './app.scss';
 @import './chat.scss';

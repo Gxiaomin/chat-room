@@ -1,7 +1,6 @@
 // 整体布局
 .container {
-  display: flex;
-  justify-content: space-between;
+  @include flex-center(row, space-between);
   width: 100%;
   height: 100%;
   .panel {
@@ -37,9 +36,7 @@
       width: 100%;
       min-width: 500px;
       height: calc(100% - 70px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-center(row, center, center);
     }
   }
 }

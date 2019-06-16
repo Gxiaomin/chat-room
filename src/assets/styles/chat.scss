@@ -1,23 +1,22 @@
 // 聊天窗口
 .chat-wrapper {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  @include flex-center(column, space-between);
   width: 80%;
   height: 530px;
   border: solid 1px #ddd;
   border-radius: $border-radius-base;
   background-color: #fff;
+
   // 窗口头部
   .chat-header {
     position: relative;
     width: 100%;
     height: 50px;
     background-color: #e8e8e861;
+
     // 用户头像、用户名
     .user {
-      display: flex;
-      align-items: center;
+      @include flex-center(row, flex-start, center);
       width: 50%;
       min-width: 50px;
       height: 50px;
@@ -35,6 +34,7 @@
         overflow: hidden;
       }
     }
+    
     // 关闭按钮
     .close {
       position: absolute;
@@ -59,11 +59,10 @@
       width: 100%;
       height: 100%;
       overflow-y: auto;
+
       // 消息主体
       .msg-item {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
+        @include flex-center(row, flex-start, center);
         width: 100%;
         min-height: 70px;
         // 用户头像
@@ -76,6 +75,7 @@
             height: 30px;
           }
         }
+
         // 内容主体
         .content-box {
           flex: 1;
@@ -101,6 +101,7 @@
           }
         }
       }
+
       // 对方消息队列
       .other {
         .content-box {
@@ -110,12 +111,12 @@
           }
         }
       }
+
       // 自己消息队列
       .self {
         flex-direction: row-reverse;
         .content-box {
-          display: flex;
-          justify-content: flex-end;
+          @include flex-center(row, flex-end);
           .content {
             background: #64d5f55c;
           }
@@ -126,8 +127,7 @@
 
   // 发送消息面板
   .chat-footer {
-    display: flex;
-    justify-content: space-between;
+    @include flex-center(row, space-between);
     width: 100%;
     height: 80px;
     box-sizing: border-box;

@@ -46,8 +46,8 @@ export const dateFtt = (type, date) => {
   }
 
   for (var k in o) {
-    if (/'(' + k + ')'/.test(type)) {
-      type = type.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (('0' + o[k]).substr(('' + o[k]).length)))
+    if (new RegExp('(' + k + ')').test(type)) {
+      type = type.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length)))
     }
   }
   return type

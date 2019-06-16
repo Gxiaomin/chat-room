@@ -3,7 +3,7 @@
     <!-- 消息主体 -->
     <div v-for="item in msgList" :key="item.id" :class="['msg-item', item.user_type]">
       <div class="user-img">
-        <img :src="`/static/${item.user_type}.png`" alt="用户头像">
+        <img :src="buildImgSrc(item.user_type)" alt="用户头像">
       </div>
       <div class="content-box">
         <div class="content">
@@ -42,6 +42,10 @@ export default {
         str = str.replace(regexp, "<a target='_blank' href='$1'>$1</a>")
       }
       return str
+    },
+
+    buildImgSrc (type) {
+      return require(`../../assets/images/${type}.png`)
     }
   },
 
